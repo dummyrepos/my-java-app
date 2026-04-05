@@ -8,12 +8,13 @@ on:
 
 jobs:
     build:
-        runs-on: ubuntu-latest
+        runs-on: ${{ matrix.os }}
         strategy:
           fail-fast: true
           matrix:
             java-version: [17,21]
             distribution: ['temurin', 'corretto', 'microsoft']
+            os: ['ubuntu-24.04', 'ubuntu-22.04', 'ubuntu-22.04-arm', 'ubuntu-24.04-arm']
         steps:
           - name: get the code
             uses: actions/checkout@v6
