@@ -1,6 +1,6 @@
 ---
 
-name: manual-workflow
+name: matrix-workflow
 
 on:
     workflow_dispatch:
