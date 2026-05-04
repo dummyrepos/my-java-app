@@ -1,0 +1,14 @@
+name: maven pipeline
+
+on:
+    pull_request:
+        branches:
+            - dev
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: get the code
+              uses: actions/checkout@v4
+            - name: packing
+              run: mvn package
